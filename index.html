@@ -1,175 +1,363 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1625036000146625"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melodies Of Pravin | Music & Entertainment</title>
-<meta name="description" content="Welcome to Melodies Of Pravin. Discover singing, music, entertainment and live performances.">
-<meta name="theme-color" content="#100c20">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Melodies Of Pravin - Enjoy singing, music, entertainment and original videos.">
+  <meta name="google-adsense-account" content="ca-pub-1625036000146625">
 
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: #100c20;
-  color: white;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-header {
-  padding: 20px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #19132b;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.logo { color: #d8a8ff; font-size: 22px; font-weight: bold; }
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-  font-size: 14px;
-}
-.hero {
-  text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(135deg,#30165a,#17102c,#090914);
-}
-.hero h1 { font-size: clamp(34px,7vw,58px); margin-bottom: 15px; }
-.hero h1 span { color: #d7a5ff; }
-.hero p { color: #ddd; max-width: 550px; margin: auto; }
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  margin: 20px 6px 0;
-  border-radius: 30px;
-  background: #a34ee8;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn.youtube { background: #e52b38; }
-section { padding: 55px 7%; text-align: center; }
-h2 { font-size: 30px; margin-bottom: 20px; color: #d7a5ff; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
-  gap: 18px;
-  margin-top: 25px;
-}
-.card {
-  background: #211a35;
-  padding: 28px 18px;
-  border-radius: 16px;
-  border: 1px solid #49305f;
-}
-.card .emoji { font-size: 42px; }
-.card h3 { margin: 10px 0; }
-.card p { color: #ccc; font-size: 14px; }
-.about { background: #19132b; }
-.social a { margin: 8px; }
-footer {
-  padding: 25px 15px;
-  text-align: center;
-  background: #090914;
-  color: #aaa;
-  font-size: 13px;
-}
-footer a { color: #d7a5ff; }
-@media(max-width:500px) {
-  header { justify-content: center; }
-  nav a { margin: 5px; }
-}
-</style>
+  <title>Melodies Of Pravin | Music & Entertainment</title>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1625036000146625"
+    crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #090510;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 55px 15px;
+      background: linear-gradient(135deg, #230044, #090510, #39005c);
+    }
+
+    header h1 {
+      font-size: clamp(30px, 7vw, 48px);
+      color: #e5b5ff;
+      text-shadow: 0 0 15px #a000ff;
+    }
+
+    header p {
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: #170b24;
+      padding: 15px 8px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d69cff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 45px 15px;
+    }
+
+    .hero h2 {
+      color: #d99cff;
+      font-size: 28px;
+    }
+
+    .hero p {
+      color: #ccc;
+      max-width: 650px;
+      margin: 12px auto;
+    }
+
+    .social a {
+      display: inline-block;
+      background: #8100bd;
+      color: white;
+      padding: 11px 20px;
+      margin: 8px;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 35px 15px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #d99cff;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: #1a1025;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid #48215e;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .instagram-grid blockquote {
+      background: white;
+      border-radius: 10px;
+      max-width: 350px;
+      width: 100%;
+      min-height: 420px;
+    }
+
+    .about, .contact, .privacy {
+      background: #160c20;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+      border: 1px solid #48215e;
+    }
+
+    .about p, .contact p, .privacy p {
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      text-align: center;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #e1aaff;
+    }
+
+    footer {
+      background: #13091c;
+      text-align: center;
+      padding: 25px 10px;
+      color: #aaa;
+      margin-top: 40px;
+    }
+
+    /* Vinyl record */
+    .vinyl {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #e6baff 0 8%, #5a087d 9% 17%,
+        #111 18% 22%, #292929 23% 25%, #080808 26% 100%);
+      border: 3px solid #777;
+      box-shadow: 0 0 15px #a000ff;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .vinyl.spin {
+      animation: spin 1.2s linear;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(720deg); }
+    }
+
+    @media (max-width: 500px) {
+      nav a {
+        margin: 0 5px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">🎵 Melodies Of Pravin</div>
+  <header>
+    <h1>🎵 Melodies Of Pravin 🎵</h1>
+    <p>Music • Singing • Entertainment • Happiness</p>
+  </header>
+
   <nav>
     <a href="#home">Home</a>
-    <a href="#music">Music</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#instagram">Instagram</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+    <a href="#privacy">Privacy</a>
   </nav>
-</header>
 
-<div class="hero" id="home">
-  <h1>Welcome to <span>Melodies Of Pravin</span></h1>
-  <p>Feel the music, enjoy the melodies and celebrate the joy of singing!</p>
-  <a class="btn youtube"
-     href="https://youtube.com/@melodiesofpravin_1973"
-     target="_blank">▶ Visit Our YouTube</a>
-  <a class="btn"
-     href="https://www.instagram.com/_pravinn_singer_/"
-     target="_blank">Follow Instagram</a>
-</div>
+  <div class="hero" id="home">
+    <h2>Welcome to My Music World!</h2>
+    <p>
+      Welcome to Melodies Of Pravin. Discover singing,
+      music, entertainment and videos. Enjoy the melodies!
+    </p>
 
-<section id="music">
-  <h2>Explore Our World 🎶</h2>
-  <div class="cards">
-    <div class="card">
-      <div class="emoji">🎤</div>
-      <h3>Singing</h3>
-      <p>Enjoy singing performances and musical moments.</p>
-    </div>
-    <div class="card">
-      <div class="emoji">🎧</div>
-      <h3>Music</h3>
-      <p>Discover our music-related videos and performances.</p>
-    </div>
-    <div class="card">
-      <div class="emoji">📺</div>
-      <h3>Entertainment</h3>
-      <p>Enjoy entertainment and special content.</p>
-    </div>
-    <div class="card">
-      <div class="emoji">🔴</div>
-      <h3>Live Shows</h3>
-      <p>Visit our YouTube channel for live singing sessions.</p>
+    <div class="social">
+      <a href="https://youtube.com/@melodiesofpravin_1973"
+         target="_blank" rel="noopener">▶ YouTube</a>
+
+      <a href="https://www.instagram.com/_pravinn_singer_/"
+         target="_blank" rel="noopener">📸 Instagram</a>
     </div>
   </div>
 
-  <a class="btn youtube"
-     href="https://youtube.com/@melodiesofpravin_1973"
-     target="_blank">Explore Videos</a>
-</section>
+  <section id="youtube">
+    <h2>▶ My YouTube Videos</h2>
 
-<section class="about" id="about">
-  <h2>About Us ❤️</h2>
-  <p>
-    Welcome to Melodies Of Pravin, a place for music,
-    singing, entertainment and live performances.
-    Our aim is to share musical happiness with everyone.
-    Thank you for being part of our journey!
-  </p>
-</section>
+    <div class="video-grid">
 
-<section id="contact">
-  <h2>Connect With Us</h2>
-  <p>Follow our social media pages and stay connected.</p>
-  <div class="social">
-    <a class="btn" href="https://www.instagram.com/_pravinn_singer_/"
-       target="_blank">📸 Instagram</a>
-    <a class="btn youtube"
-       href="https://youtube.com/@melodiesofpravin_1973"
-       target="_blank">▶ YouTube</a>
-  </div>
-</section>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/fnJo2B-oilQ"
+          title="YouTube video 1" allowfullscreen loading="lazy"></iframe>
+      </div>
 
-<footer>
-  <p>© 2026 Melodies Of Pravin. All rights reserved.</p>
-  <p>Music • Singing • Entertainment</p>
-  <p>
-    <a href="#about">About</a> |
-    <a href="#contact">Contact</a>
-  </p>
-</footer>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/FkYFxqe5V_8"
+          title="YouTube video 2" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/asDW3ysNarA"
+          title="YouTube video 3" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/26EZpYAJcbY"
+          title="YouTube video 4" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/44BH5EVo4lI"
+          title="YouTube video 5" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="instagram">
+    <h2>📸 Instagram Reels</h2>
+
+    <div class="instagram-grid">
+
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DHl8MqfCbJp/"
+        data-instgrm-version="14"></blockquote>
+
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DUICX5HjIx1/"
+        data-instgrm-version="14"></blockquote>
+
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DcajjYkozwh/"
+        data-instgrm-version="14"></blockquote>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <p>
+        Melodies Of Pravin is a music and entertainment platform
+        created to share singing, videos and musical moments.
+      </p>
+      <p>Thank you for visiting and supporting our music journey!</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>For questions and collaborations, visit our social profiles:</p>
+      <p>
+        <a href="https://youtube.com/@melodiesofpravin_1973">
+          YouTube Channel
+        </a>
+      </p>
+      <p>
+        <a href="https://www.instagram.com/_pravinn_singer_/">
+          Instagram Profile
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <div class="privacy">
+      <p>
+        This website may use third-party services such as YouTube,
+        Instagram and Google AdSense. These services may use cookies
+        or similar technologies according to their own privacy policies.
+      </p>
+      <p>
+        Embedded content may collect information about visitors
+        according to the privacy practices of the relevant provider.
+      </p>
+      <p>
+        Visitors can manage cookies through their browser settings.
+        This policy should be updated if the website's data practices change.
+      </p>
+    </div>
+  </section>
+
+  <div class="vinyl" id="vinyl"></div>
+
+  <footer>
+    <p>© 2026 Melodies Of Pravin. All Rights Reserved.</p>
+    <p>Made with ❤️ and 🎵</p>
+  </footer>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <script>
+    const vinyl = document.getElementById("vinyl");
+
+    document.addEventListener("pointerdown", function () {
+      vinyl.classList.remove("spin");
+      void vinyl.offsetWidth;
+      vinyl.classList.add("spin");
+    });
+  </script>
 
 </body>
-  </html>
-  
+</html>
