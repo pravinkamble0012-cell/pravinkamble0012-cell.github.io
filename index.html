@@ -192,7 +192,7 @@
     }
 
     .vinyl.spin {
-      animation: spin 1.2s linear;
+      animation: spin 2s linear;
     }
 
     @keyframes spin {
@@ -352,7 +352,7 @@
   <script>
     const vinyl = document.getElementById("vinyl");
 
-    document.addEventListener("pointerdown", function () {
+    document.addEventListener("click", function () {
       vinyl.classList.remove("spin");
       void vinyl.offsetWidth;
       vinyl.classList.add("spin");
