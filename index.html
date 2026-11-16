@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,6 @@
 
   <title>Melodies Of Pravin | Music & Entertainment</title>
 
-  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1625036000146625"
     crossorigin="anonymous"></script>
 
@@ -20,9 +18,7 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, sans-serif;
@@ -30,6 +26,8 @@
       color: white;
       line-height: 1.6;
     }
+
+    a { color: inherit; }
 
     header {
       text-align: center;
@@ -64,9 +62,7 @@
       font-size: 14px;
     }
 
-    nav a:hover {
-      color: #d69cff;
-    }
+    nav a:hover { color: #d69cff; }
 
     .hero {
       text-align: center;
@@ -141,7 +137,7 @@
       min-height: 420px;
     }
 
-    .about, .contact, .privacy {
+    .about, .contact, .privacy, .story {
       background: #160c20;
       padding: 25px;
       border-radius: 15px;
@@ -149,7 +145,7 @@
       border: 1px solid #48215e;
     }
 
-    .about p, .contact p, .privacy p {
+    .about p, .contact p, .privacy p, .story p {
       color: #ddd;
       margin-bottom: 10px;
     }
@@ -173,12 +169,71 @@
       margin: 5px 0;
     }
 
-    .contact {
-      text-align: center;
+    .story {
+      text-align: left;
     }
 
-    .contact a {
-      color: #e1aaff;
+    .story strong {
+      color: #f0d4ff;
+    }
+
+    .contact { text-align: center; }
+    .contact a { color: #e1aaff; }
+
+    .cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(22, 12, 32, 0.97);
+      border-top: 1px solid #48215e;
+      color: #f3e7ff;
+      z-index: 50;
+      display: none;
+      padding: 16px 20px;
+    }
+
+    .cookie-banner.show { display: block; }
+
+    .cookie-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-inner p {
+      flex: 1 1 500px;
+      color: #ddd;
+      margin: 0;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      border: none;
+      cursor: pointer;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .cookie-btn.primary {
+      background: #a600ff;
+      color: #fff;
+    }
+
+    .cookie-btn.secondary {
+      background: #2a1537;
+      color: #f3d8ff;
+      border: 1px solid #5d3479;
     }
 
     footer {
@@ -189,7 +244,12 @@
       margin-top: 40px;
     }
 
-    /* A vinyl disk rolls away from each tap or click. */
+    footer a {
+      color: #e1aaff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
     .vinyl {
       position: fixed;
       left: 0;
@@ -230,9 +290,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .vinyl.roll {
-        animation-duration: 250ms;
-      }
+      .vinyl.roll { animation-duration: 250ms; }
     }
 
     @media (max-width: 500px) {
@@ -240,12 +298,14 @@
         margin: 0 5px;
         font-size: 12px;
       }
+      .cookie-inner {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <h1>🎵 Melodies Of Pravin 🎵</h1>
     <p>Music • Singing • Entertainment • Happiness</p>
@@ -256,8 +316,9 @@
     <a href="#youtube">YouTube</a>
     <a href="#instagram">Instagram</a>
     <a href="#about">About</a>
+    <a href="#story">Story</a>
     <a href="#contact">Contact</a>
-    <a href="#privacy">Privacy</a>
+    <a href="privacy.html">Privacy</a>
   </nav>
 
   <div class="hero" id="home">
@@ -268,64 +329,38 @@
     </p>
 
     <div class="social">
-      <a href="https://youtube.com/@melodiesofpravin_1973"
-         target="_blank" rel="noopener">▶ YouTube</a>
-
-      <a href="https://www.instagram.com/_pravinn_singer_/"
-         target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://youtube.com/@melodiesofpravin_1973" target="_blank" rel="noopener">▶ YouTube</a>
+      <a href="https://www.instagram.com/_pravinn_singer_/" target="_blank" rel="noopener">📸 Instagram</a>
     </div>
   </div>
 
   <section id="youtube">
     <h2>▶ My YouTube Videos</h2>
-
     <div class="video-grid">
-
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/fnJo2B-oilQ"
-          title="YouTube video 1" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/fnJo2B-oilQ" title="YouTube video 1" allowfullscreen loading="lazy"></iframe>
       </div>
-
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/FkYFxqe5V_8"
-          title="YouTube video 2" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/FkYFxqe5V_8" title="YouTube video 2" allowfullscreen loading="lazy"></iframe>
       </div>
-
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/asDW3ysNarA"
-          title="YouTube video 3" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/asDW3ysNarA" title="YouTube video 3" allowfullscreen loading="lazy"></iframe>
       </div>
-
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/26EZpYAJcbY"
-          title="YouTube video 4" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/26EZpYAJcbY" title="YouTube video 4" allowfullscreen loading="lazy"></iframe>
       </div>
-
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/44BH5EVo4lI"
-          title="YouTube video 5" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/44BH5EVo4lI" title="YouTube video 5" allowfullscreen loading="lazy"></iframe>
       </div>
-
     </div>
   </section>
 
   <section id="instagram">
     <h2>📸 Instagram Reels</h2>
-
     <div class="instagram-grid">
-
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DHl8MqfCbJp/"
-        data-instgrm-version="14"></blockquote>
-
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DUICX5HjIx1/"
-        data-instgrm-version="14"></blockquote>
-
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DcajjYkozwh/"
-        data-instgrm-version="14"></blockquote>
-
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHl8MqfCbJp/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUICX5HjIx1/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcajjYkozwh/" data-instgrm-version="14"></blockquote>
     </div>
   </section>
 
@@ -358,20 +393,21 @@
     </div>
   </section>
 
+  <section id="story">
+    <h2>My Story</h2>
+    <div class="story">
+      <p><strong>Music is more than performance.</strong> For me, singing is a way to express feelings, celebrate life, and connect with people who love melody and emotion.</p>
+      <p>I enjoy trying different styles, from soft and soulful tracks to energetic songs that lift the mood. Every performance carries a message, and my goal is to make listeners feel inspired, comforted, and joyful.</p>
+      <p>Thank you for supporting my musical journey and for being part of this creative space. Your encouragement keeps me motivated to keep sharing new songs, moments, and memories with the world.</p>
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact">
       <p>For questions and collaborations, visit our social profiles:</p>
-      <p>
-        <a href="https://youtube.com/@melodiesofpravin_1973">
-          YouTube Channel
-        </a>
-      </p>
-      <p>
-        <a href="https://www.instagram.com/_pravinn_singer_/">
-          Instagram Profile
-        </a>
-      </p>
+      <p><a href="https://youtube.com/@melodiesofpravin_1973">YouTube Channel</a></p>
+      <p><a href="https://www.instagram.com/_pravinn_singer_/">Instagram Profile</a></p>
     </div>
   </section>
 
@@ -389,7 +425,7 @@
       </p>
       <p>
         Visitors can manage cookies through their browser settings.
-        This policy should be updated if the website's data practices change.
+        For more detail, see the <a href="privacy.html" style="color:#e1aaff;">Privacy Policy</a>.
       </p>
     </div>
   </section>
@@ -398,8 +434,21 @@
 
   <footer>
     <p>© 2026 Melodies Of Pravin. All Rights Reserved.</p>
-    <p>Made with ❤️ and 🎵</p>
+    <p>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </p>
   </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notification">
+    <div class="cookie-inner">
+      <p>This site may use cookies and advertising technologies to improve your experience. By continuing to use this site, you agree to our privacy practices.</p>
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn primary" id="acceptCookies">Accept</button>
+        <a class="cookie-btn secondary" href="privacy.html">Learn more</a>
+      </div>
+    </div>
+  </div>
 
   <script async src="https://www.instagram.com/embed.js"></script>
 
@@ -418,7 +467,22 @@
       vinyl.classList.remove("roll");
       vinyl.style.visibility = "hidden";
     });
-  </script>
 
+    const cookieBanner = document.getElementById("cookieBanner");
+    const acceptCookiesBtn = document.getElementById("acceptCookies");
+
+    function setCookieConsent(value) {
+      localStorage.setItem("cookieConsent", value);
+      cookieBanner.classList.remove("show");
+    }
+
+    if (!localStorage.getItem("cookieConsent")) {
+      cookieBanner.classList.add("show");
+    }
+
+    acceptCookiesBtn.addEventListener("click", function () {
+      setCookieConsent("accepted");
+    });
+  </script>
 </body>
 </html>
