@@ -97,6 +97,77 @@ main { overflow: hidden; }
 .site-footer nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .site-footer a { color: #a4aaba; text-decoration: none; }
 .site-footer a:hover { color: #fff; }
+.tap-effect {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(var(--tap-x), var(--tap-y));
+  animation: tap-pop 1s ease-out forwards;
+}
+.tap-disc {
+  position: absolute;
+  left: -18px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 68, 68, 0.9);
+  box-shadow: 0 0 16px rgba(255, 60, 60, 0.9), 0 0 28px rgba(255, 78, 78, 0.55);
+  background: rgba(255, 50, 50, 0.08);
+  animation: tap-disc-expand .9s ease-out forwards;
+}
+.tap-disc::before, .tap-disc::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(255, 180, 180, .8);
+  border-radius: 50%;
+}
+.tap-disc::after { inset: 13px; background: #ff3649; border: 0; box-shadow: 0 0 10px #ff263c; }
+.tap-note {
+  position: absolute;
+  left: -8px;
+  top: -12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff4f4;
+  text-shadow: 0 0 10px rgba(255, 72, 72, 0.8);
+  transform: translate(var(--note-x), var(--note-y));
+  animation: tap-note-float .9s ease-out forwards;
+}
+.tap-spark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,85,85,.95), rgba(255,180,180,0));
+  transform: translate(var(--spark-x), var(--spark-y));
+  animation: tap-spark-fade .9s ease-out forwards;
+}
+@keyframes tap-disc-expand {
+  0% { opacity: 1; transform: scale(0.4); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+@keyframes tap-note-float {
+  0% { opacity: 0; transform: translate(var(--note-x), var(--note-y)) scale(0.5); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--note-x), calc(var(--note-y) - 18px)) scale(1.2); }
+}
+@keyframes tap-spark-fade {
+  0% { opacity: 1; transform: translate(var(--spark-x), var(--spark-y)) scale(1); }
+  100% { opacity: 0; transform: translate(calc(var(--spark-x) * 1.2), calc(var(--spark-y) * 1.2 - 12px)) scale(0.35); }
+}
+@keyframes tap-pop {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
 @media (min-width: 900px) {
   .hero-art { margin-top: 24px; }
   .profile-section { padding-bottom: 50px; }
