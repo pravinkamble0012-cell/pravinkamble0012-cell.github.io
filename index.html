@@ -189,13 +189,13 @@
       margin-top: 40px;
     }
 
-    /* Vinyl record */
+    /* A vinyl disk rolls away from each tap or click. */
     .vinyl {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 85px;
-      height: 85px;
+      left: 0;
+      top: 0;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       background:
         radial-gradient(circle, #e6baff 0 8%, #5a087d 9% 17%,
@@ -204,14 +204,35 @@
       box-shadow: 0 0 15px #a000ff;
       z-index: 20;
       pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -50%);
     }
 
-    .vinyl.spin {
-      animation: spin 2s linear;
+    .vinyl.roll {
+      visibility: visible;
+      animation: roll-away 900ms ease-out forwards;
     }
 
-    @keyframes spin {
-      to { transform: rotate(720deg); }
+    @keyframes roll-away {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.65);
+      }
+      15% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(calc(-50% + 110px), calc(-50% - 35px)) rotate(720deg) scale(0.8);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .vinyl.roll {
+        animation-duration: 250ms;
+      }
     }
 
     @media (max-width: 500px) {
@@ -373,7 +394,7 @@
     </div>
   </section>
 
-  <div class="vinyl" id="vinyl"></div>
+  <div class="vinyl" id="vinyl" aria-hidden="true"></div>
 
   <footer>
     <p>© 2026 Melodies Of Pravin. All Rights Reserved.</p>
@@ -385,10 +406,17 @@
   <script>
     const vinyl = document.getElementById("vinyl");
 
-    document.addEventListener("click", function () {
-      vinyl.classList.remove("spin");
+    document.addEventListener("click", function (event) {
+      vinyl.style.left = `${event.clientX}px`;
+      vinyl.style.top = `${event.clientY}px`;
+      vinyl.classList.remove("roll");
       void vinyl.offsetWidth;
-      vinyl.classList.add("spin");
+      vinyl.classList.add("roll");
+    });
+
+    vinyl.addEventListener("animationend", function () {
+      vinyl.classList.remove("roll");
+      vinyl.style.visibility = "hidden";
     });
   </script>
 
