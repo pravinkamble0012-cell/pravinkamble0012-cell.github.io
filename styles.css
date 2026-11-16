@@ -1,56 +1,155 @@
-/* Shared styles for Melodies Of Pravin pages */
-:root { color-scheme: dark; --page:#090510; --surface:#160c20; --surface-raised:#1a1025; --border:#48215e; --accent:#e5b5ff; --accent-bright:#d99cff; --text:#fff; --muted:#ddd; }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { margin:0; min-width:320px; font-family:Arial,sans-serif; line-height:1.65; background:var(--page); color:var(--text); }
-a { color:#e1aaff; }
-a:focus-visible,button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
-.site-header { padding:38px 16px 30px; text-align:center; background:linear-gradient(135deg,#230044,#090510,#39005c); }
-.brand { display:inline-block; color:var(--accent); font-size:clamp(28px,6vw,46px); font-weight:700; line-height:1.2; text-decoration:none; text-shadow:0 0 15px #a000ff; }
-.site-header p { color:var(--muted); margin:10px 0 0; }
-.site-nav { position:sticky; top:0; z-index:10; display:flex; justify-content:center; flex-wrap:wrap; gap:4px 20px; padding:13px 10px; background:#170b24; border-bottom:1px solid #321643; }
-.site-nav a { color:#fff; padding:4px 2px; text-decoration:none; }
-.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--accent); }
-main { min-height:55vh; }
-.hero,.page-heading { max-width:900px; margin:0 auto; padding:clamp(38px,7vw,72px) 18px 34px; text-align:center; }
-.hero h1,.page-heading h1 { color:var(--accent-bright); font-size:clamp(30px,5vw,42px); line-height:1.2; }
-.hero p,.page-heading p { max-width:720px; margin:14px auto; color:#ddd; }
-.button-row { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:24px; }
-.button { display:inline-block; padding:10px 18px; border:1px solid #a000ff; border-radius:999px; background:#8100bd; color:#fff; text-decoration:none; }
-.button-outline { background:transparent; border-color:#9c67b5; }
-.content-section { max-width:1100px; margin:0 auto; padding:28px 18px 42px; }
-.content-section>h2 { color:var(--accent-bright); text-align:center; margin:0 0 22px; }
-.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:18px; }
-.card,.feature,.prose,.callout { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px; }
-.card h2,.card h3,.prose h2 { color:var(--accent); margin-top:0; }
-.card p,.feature p,.prose p,.prose li,.callout { color:var(--muted); }
-.card a,.text-link { font-weight:700; }
-.feature { max-width:900px; margin:0 auto; }
-.feature h2 { color:var(--accent); }
-.prose { max-width:850px; margin:0 auto; }
-.prose h2 { margin-top:24px; }
-.prose h2:first-child { margin-top:0; }
-.prose li { margin:8px 0; }
-.video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:20px; }
-.video-card { min-width:0; padding:14px; background:var(--surface-raised); border:1px solid var(--border); border-radius:14px; }
-.video-card h2 { color:var(--accent); font-size:19px; }
-.video-card iframe { display:block; width:100%; aspect-ratio:9/16; border:0; border-radius:9px; background:#000; }
-.video-card p { color:var(--muted); }
-.instagram-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:20px; justify-items:center; }
-.instagram-media { width:100%; max-width:350px; min-height:420px; margin:0!important; background:#fff; border-radius:10px; }
-.callout { margin:28px auto 0; max-width:850px; }
-.site-footer { margin-top:30px; padding:24px 12px; background:#13091c; text-align:center; color:#aaa; }
-.site-footer p { margin:7px 0; }
-.site-footer a { display:inline-block; margin:3px 9px; color:#e1aaff; }
-/* Tap effects are decorative and never intercept clicks. */
-.tap-effect { position:fixed; z-index:1000; left:var(--tap-x); top:var(--tap-y); width:1px; height:1px; pointer-events:none; }
-.tap-disc { position:absolute; width:54px; height:54px; left:0; top:0; border:2px solid rgba(255,230,150,.95); border-radius:50%; transform:translate(-50%,-50%) scale(.25); box-shadow:0 0 18px #ffb52e, inset 0 0 12px rgba(255,210,90,.7); animation:tap-disc 720ms cubic-bezier(.15,.75,.25,1) forwards; }
-.tap-disc::before,.tap-disc::after { content:""; position:absolute; inset:6px; border:1px solid rgba(255,255,255,.65); border-radius:50%; }
-.tap-disc::after { inset:17px; background:radial-gradient(circle,#fff6c8 0 18%,#ffb32f 25% 55%,#7b28a8 75%); border:0; }
-.tap-note { position:absolute; left:0; top:0; color:#ffe477; font-size:22px; font-weight:bold; text-shadow:0 0 10px #ff9a24; animation:tap-note 900ms ease-out forwards; }
-.tap-spark { position:absolute; left:0; top:0; width:7px; height:7px; border-radius:50%; background:#fff5b0; box-shadow:0 0 9px 3px #ff9c26; animation:tap-spark 650ms ease-out forwards; }
-@keyframes tap-disc { 0% { opacity:0; transform:translate(-50%,-50%) scale(.2) rotate(0); } 18% { opacity:1; } 70% { opacity:1; } 100% { opacity:0; transform:translate(-50%,-50%) scale(1.7) rotate(300deg); } }
-@keyframes tap-note { 0% { opacity:0; transform:translate(-50%,-50%) scale(.4) rotate(-20deg); } 15% { opacity:1; } 100% { opacity:0; transform:translate(calc(-50% + var(--note-x)),calc(-50% + var(--note-y))) scale(1.3) rotate(22deg); } }
-@keyframes tap-spark { 0% { opacity:1; transform:translate(-50%,-50%) scale(.4); } 100% { opacity:0; transform:translate(var(--spark-x),var(--spark-y)) scale(0); } }
-@media (max-width:520px) { .site-nav { gap:3px 13px; } .site-nav a { font-size:14px; } .content-section { padding-left:14px; padding-right:14px; } }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .tap-disc,.tap-note,.tap-spark { animation-duration:300ms; } }
+/* Shared visual theme for Melodies Of Pravin: premium black, white, and gold. */
+:root {
+  color-scheme: dark;
+  --page: #080808;
+  --surface: #111111;
+  --surface-raised: #181818;
+  --border: #51411f;
+  --gold: #d7ad52;
+  --gold-light: #f3d783;
+  --text: #fff;
+  --muted: #d2d2d2;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  background: radial-gradient(ellipse at top, #1d1a13 0, var(--page) 540px);
+  color: var(--text);
+}
+a { color: var(--gold-light); }
+a:hover { color: #fff1bd; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+.site-header {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(42px, 8vw, 78px) 16px 38px;
+  text-align: center;
+  background: linear-gradient(130deg, #050505 12%, #211b0d 52%, #080808 100%);
+  border-bottom: 1px solid #6f5927;
+}
+.site-header::after {
+  content: "";
+  display: block;
+  width: min(150px, 35vw);
+  height: 2px;
+  margin: 22px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  box-shadow: 0 0 15px rgba(215, 173, 82, .65);
+}
+.brand {
+  display: inline-block;
+  color: var(--gold-light);
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  text-decoration: none;
+  text-shadow: 0 0 24px rgba(215, 173, 82, .3);
+}
+.site-header p { color: #e2e0db; margin: 12px 0 0; letter-spacing: .08em; }
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px 22px;
+  padding: 14px 10px;
+  background: rgba(8, 8, 8, .96);
+  border-bottom: 1px solid #493a1e;
+  backdrop-filter: blur(12px);
+}
+.site-nav a { color: #f5f5f5; padding: 5px 3px; text-decoration: none; transition: color .2s ease; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--gold-light); }
+main { min-height: 55vh; }
+.hero, .page-heading {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 88px) 18px 38px;
+  text-align: center;
+}
+.hero h1, .page-heading h1 {
+  color: var(--gold-light);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+.hero p, .page-heading p { max-width: 740px; margin: 16px auto; color: var(--muted); font-size: 1.08rem; }
+.button-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.button {
+  display: inline-block;
+  padding: 11px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0d17a, #b8882f);
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(215, 173, 82, .16);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.button:hover { color: #080808; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(215, 173, 82, .3); }
+.button-outline { background: transparent; color: var(--gold-light); border-color: #9c7a36; box-shadow: none; }
+.button-outline:hover { color: #080808; background: var(--gold-light); }
+.content-section { max-width: 1100px; margin: 0 auto; padding: 30px 18px 46px; }
+.content-section > h2 { color: var(--gold-light); text-align: center; margin: 0 0 24px; font-size: clamp(24px, 3vw, 32px); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
+.card, .feature, .prose, .callout {
+  background: linear-gradient(145deg, #171717, #0f0f0f);
+  border: 1px solid #3c3321;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+}
+.card { transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.card:hover { transform: translateY(-4px); border-color: #947331; box-shadow: 0 15px 34px rgba(0, 0, 0, .35); }
+.card h2, .card h3, .prose h2 { color: var(--gold-light); margin-top: 0; }
+.card p, .feature p, .prose p, .prose li, .callout { color: var(--muted); }
+.card a, .text-link { font-weight: 700; }
+.feature { max-width: 900px; margin: 0 auto; border-top: 2px solid #8a6c2e; }
+.feature h2 { color: var(--gold-light); }
+.prose { max-width: 850px; margin: 0 auto; }
+.prose h2 { margin-top: 26px; }
+.prose h2:first-child { margin-top: 0; }
+.prose li { margin: 8px 0; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; }
+.video-card { min-width: 0; padding: 15px; background: #111; border: 1px solid #42371f; border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, .3); }
+.video-card h2 { color: var(--gold-light); font-size: 19px; }
+.video-card iframe { display: block; width: 100%; aspect-ratio: 9 / 16; border: 1px solid #39301e; border-radius: 10px; background: #000; }
+.video-card p { color: var(--muted); }
+.instagram-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; justify-items: center; }
+.instagram-media { width: 100%; max-width: 350px; min-height: 420px; margin: 0 !important; background: #fff; border-radius: 10px; }
+.callout { margin: 28px auto 0; max-width: 850px; border-left: 3px solid var(--gold); }
+.site-footer { margin-top: 30px; padding: 26px 12px; background: #050505; border-top: 1px solid #493a1e; text-align: center; color: #bdbdbd; }
+.site-footer p { margin: 7px 0; }
+.site-footer a { display: inline-block; margin: 3px 9px; color: var(--gold-light); text-decoration: none; }
+.site-footer a:hover { color: #fff; text-decoration: underline; }
+
+/* Golden musical ripple and sparks. Each tap creates its own independent effect. */
+.tap-effect { position: fixed; z-index: 1000; left: var(--tap-x); top: var(--tap-y); width: 1px; height: 1px; pointer-events: none; }
+.tap-disc { position: absolute; width: 54px; height: 54px; left: 0; top: 0; border: 2px solid rgba(255, 226, 145, .98); border-radius: 50%; transform: translate(-50%, -50%) scale(.25); box-shadow: 0 0 18px #e3b84e, inset 0 0 12px rgba(244, 208, 112, .75); animation: tap-disc 720ms cubic-bezier(.15, .75, .25, 1) forwards; }
+.tap-disc::before, .tap-disc::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(255, 255, 255, .75); border-radius: 50%; }
+.tap-disc::after { inset: 17px; background: radial-gradient(circle, #fff8d8 0 18%, #e3b84e 25% 60%, #8a6422 82%); border: 0; }
+.tap-note { position: absolute; left: 0; top: 0; color: #ffe477; font-size: 22px; font-weight: bold; text-shadow: 0 0 10px #d4942b; animation: tap-note 900ms ease-out forwards; }
+.tap-spark { position: absolute; left: 0; top: 0; width: 7px; height: 7px; border-radius: 50%; background: #fff5b0; box-shadow: 0 0 9px 3px #d9a83b; animation: tap-spark 650ms ease-out forwards; }
+@keyframes tap-disc { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.2) rotate(0); } 18% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.7) rotate(300deg); } }
+@keyframes tap-note { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(-20deg); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--note-x)), calc(-50% + var(--note-y))) scale(1.3) rotate(22deg); } }
+@keyframes tap-spark { 0% { opacity: 1; transform: translate(-50%, -50%) scale(.4); } 100% { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)) scale(0); } }
+
+@media (max-width: 520px) {
+  .site-nav { gap: 3px 13px; }
+  .site-nav a { font-size: 14px; }
+  .content-section { padding-left: 14px; padding-right: 14px; }
+  .site-header p { font-size: .9rem; letter-spacing: .04em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  .tap-disc, .tap-note, .tap-spark { animation-duration: 300ms; }
+}
